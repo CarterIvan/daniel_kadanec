@@ -72,8 +72,7 @@ function Footer() {
         <div className={`container ${styles.bottomInner}`}>
           <span>© 2026 Daniel Kadanec — Nábytok na mieru. Všetky práva vyhradené.</span>
           <div className={styles.bottomLinks}>
-            <a href="#">Ochrana osobných údajov</a>
-            <a href="#">Zásady cookies</a>
+            
             <a href="#">Designed by Ivan Ponican</a>
           </div>
         </div>

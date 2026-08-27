@@ -1,4 +1,5 @@
 import { features } from '../../data/content'
+import Reveal from '../Reveal/Reveal'
 import styles from './FeatureBar.module.css'
 
 const icons = [
@@ -34,13 +35,13 @@ function FeatureBar() {
     <section className={styles.bar}>
       <div className={`container ${styles.grid}`}>
         {features.map((feature, i) => (
-          <div className={styles.item} key={feature.title}>
+          <Reveal className={styles.item} variant="item" delay={i * 90} key={feature.title}>
             <span className={styles.icon}>{icons[i]}</span>
             <div>
               <h3 className={styles.title}>{feature.title}</h3>
               <p className={styles.desc}>{feature.description}</p>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

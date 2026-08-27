@@ -11,12 +11,11 @@ export { heroImg, kitchenDiningPendant }
 
 export const navLinks = [
   { label: 'Domov', href: '#home' },
-  { label: 'Kuchyne', href: 'kuchyne-na-mieru' },
-  { label: 'Vstavané skrine', href: 'vstavane-skrine' },
-  { label: 'Nábytok na mieru', href: 'nabytok-do-interieru' },
+  { label: 'Kuchyne', href: '/kuchyne-na-mieru' },
+  { label: 'Vstavané skrine', href: '/vstavane-skrine' },
+  { label: 'Nábytok na mieru', href: '/nabytok-do-interieru' },
   { label: 'Realizácie', href: '#projects' },
   { label: 'O mne', href: '#about' },
-  
 ]
 
 export const features = [

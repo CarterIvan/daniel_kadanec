@@ -21,9 +21,7 @@ function Home() {
   return (
     <main>
       <Hero />
-      <Reveal>
-        <FeatureBar />
-      </Reveal>
+      <FeatureBar />
       <Reveal>
         <Services />
       </Reveal>

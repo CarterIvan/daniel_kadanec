@@ -1,5 +1,6 @@
 .reveal,
-.image {
+.image,
+.item {
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-premium), transform var(--dur-slow) var(--ease-premium);
 }
@@ -13,15 +14,22 @@
   transition-duration: var(--dur-base);
 }
 
+.item {
+  transform: translateY(10px);
+  transition-duration: var(--dur-base);
+}
+
 .reveal.visible,
-.image.visible {
+.image.visible,
+.item.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .image {
+  .image,
+  .item {
     transition: none;
     opacity: 1;
     transform: none;

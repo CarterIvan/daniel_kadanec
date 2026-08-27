@@ -49,9 +49,15 @@ function Header() {
             <ul className={styles.navList}>
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={sectionHref(link.href, pathname)} onClick={closeMenu}>
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link to={link.href} onClick={closeMenu}>
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a href={sectionHref(link.href, pathname)} onClick={closeMenu}>
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

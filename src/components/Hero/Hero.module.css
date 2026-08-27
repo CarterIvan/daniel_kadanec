@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 92vh;
+  height: 100vh;
   min-height: 780px;
   max-height: 920px;
   overflow: hidden;
@@ -261,9 +261,9 @@
    optically centered block sitting on top of it. */
 @media (max-width: 768px) {
   .hero {
-    height: 92vh;
-    height: 92svh;
-    min-height: 600px;
+    height: 100vh;
+    height: 100svh;
+    min-height: 900px;
     max-height: 800px;
   }
 

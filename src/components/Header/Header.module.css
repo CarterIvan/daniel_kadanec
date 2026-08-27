@@ -381,10 +381,10 @@
     justify-content: center;
     margin-top: auto;
     margin-bottom: clamp(8px, 2vh, 16px);
-    padding-top: clamp(16px, 4vh, 28px);
+    padding-top: clamp(16px, 4vh, 10px);
     padding-left: 32px;
     padding-right: 32px;
-    padding-bottom: 14px;
+    padding-bottom: 10px;
     font-size: 10.5px;
     letter-spacing: 0.12em;
     opacity: 0;

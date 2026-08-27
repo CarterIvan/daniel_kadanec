@@ -17,12 +17,12 @@ function Footer() {
             Bratislava a okolie.
           </p>
           <div className={styles.social}>
-            <a href="#" aria-label="Facebook" className={styles.socialIcon}>
+            <a href="https://www.facebook.com/daniel.kadanec" aria-label="Facebook" className={styles.socialIcon}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.57 14.2 3.57c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.4V13h2.75v8h3.35z" />
               </svg>
             </a>
-            <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+            <a href="https://www.instagram.com/danjo.kady/" aria-label="Instagram" className={styles.socialIcon}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
                 <circle cx="12" cy="12" r="4" />

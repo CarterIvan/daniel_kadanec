@@ -1,0 +1,12 @@
+import { chromium } from 'playwright'
+const browser = await chromium.launch()
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
+const start = Date.now()
+await page.goto('http://localhost:5183/', { waitUntil: 'commit' })
+await page.waitForTimeout(Math.max(0, 20500 - (Date.now() - start)))
+const t1 = await page.evaluate(() => getComputedStyle(document.querySelector('[class*="kenBurns"]')).transform)
+console.log('at ~20.5s (just past animation end):', t1)
+await page.waitForTimeout(2000)
+const t2 = await page.evaluate(() => getComputedStyle(document.querySelector('[class*="kenBurns"]')).transform)
+console.log('at ~22.5s (holding, should be identical to above):', t2)
+await browser.close()

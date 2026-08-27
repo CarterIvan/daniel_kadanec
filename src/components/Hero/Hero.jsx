@@ -19,11 +19,13 @@ function Hero() {
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.imageWrap}>
-        <img
-          src={heroImg}
-          alt="Moderná kuchyňa na mieru s drevenou lamelovou priečkou"
-          className={skipIntro ? '' : styles.imgSettle}
-        />
+        <div className={styles.kenBurns}>
+          <img
+            src={heroImg}
+            alt="Moderná kuchyňa na mieru s drevenou lamelovou priečkou"
+            className={skipIntro ? '' : styles.imgSettle}
+          />
+        </div>
         <div className={styles.overlay} />
       </div>
 

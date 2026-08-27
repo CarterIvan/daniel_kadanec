@@ -34,7 +34,7 @@ function Hero() {
             <br />a ďalších prémiových materiálov.
           </p>
           <div className={`${styles.actions} ${styles.reveal} ${styles.revealActions}`}>
-            <a href="#contact" className={`btn btn-primary ${styles.btn}`}>
+            <a href="+421940571802" className={`btn btn-primary ${styles.btn}`}>
               ZAVOLAJTE MI 
               <span className={styles.arrow}>→</span>
             </a>

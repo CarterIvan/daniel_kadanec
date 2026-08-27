@@ -1,0 +1,113 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0906;
+  overflow: hidden;
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 850ms cubic-bezier(0.65, 0, 0.35, 1),
+    transform 850ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.exiting {
+  opacity: 0;
+  transform: scale(1.035);
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(72vw, 620px);
+  height: min(72vw, 620px);
+  transform: translate(-50%, -50%) scale(0.75);
+  background: radial-gradient(circle, rgba(198, 160, 106, 0.18) 0%, rgba(198, 160, 106, 0) 68%);
+  opacity: 0;
+  animation: glowSweep 1300ms ease-out 900ms forwards;
+  pointer-events: none;
+}
+
+@keyframes glowSweep {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+.logoWrap {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.15);
+}
+
+@media (min-width: 640px) {
+  .logoWrap {
+    transform: scale(1.35);
+  }
+}
+
+/* Stage 1 — the DK monogram fades and settles into place first. */
+.mark {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: markIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+}
+
+@keyframes markIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stage 2 — "DANIEL KADANEC" rises gently into view. */
+.name {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: textIn 650ms cubic-bezier(0.22, 1, 0.36, 1) 600ms forwards;
+}
+
+/* Stage 3 — the "NÁBYTOK NA MIERU" subtitle follows a beat later. */
+.subtitle {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: textIn 650ms cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards;
+}
+
+@keyframes textIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    transition: opacity 400ms ease;
+  }
+
+  .mark,
+  .name,
+  .subtitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .glow {
+    display: none;
+  }
+}

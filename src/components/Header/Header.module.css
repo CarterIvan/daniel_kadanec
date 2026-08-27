@@ -1,0 +1,402 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: var(--header-height);
+  background: transparent;
+  box-shadow: 0 1px 0 rgba(201, 165, 106, 0);
+  opacity: 0;
+  animation: headerFadeIn 0.7s ease 2.3s forwards;
+  transition:
+    height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header.scrolled {
+  height: calc(var(--header-height) - 22px);
+  background: rgba(11, 9, 6, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(201, 165, 106, 0.1);
+}
+
+@keyframes headerFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.logoLink {
+  justify-self: start;
+}
+
+.nav {
+  justify-self: center;
+  display: flex;
+  min-width: 0;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  white-space: nowrap;
+}
+
+.navList a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-on-dark);
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
+}
+
+.navList a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navList a:hover {
+  color: var(--color-gold-light);
+}
+
+.navList a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.cta {
+  justify-self: end;
+}
+
+.ctaButton {
+  padding: 17px 30px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ctaButton:hover {
+  background: #b8925f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(198, 160, 106, 0.28);
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ctaButton:hover .ctaArrow,
+.mobileCta:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+.mobileCta {
+  display: none;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 60;
+}
+
+.burger span {
+  display: block;
+  height: 1px;
+  width: 22px;
+  background: var(--color-text-on-dark);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, background-color 0.3s ease;
+}
+
+.burger:hover span {
+  background: var(--color-gold-light);
+}
+
+/* Hamburger → refined X morph: the two lines rotate into a cross and
+   recenter, rather than swapping to a separate close icon. */
+.burgerOpen span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.burgerOpen span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.burgerOpen:hover span {
+  background: var(--color-gold-light);
+}
+
+/* Small desktop / laptop: keep the full inline nav, just tighten the spacing
+   so items never collide as the viewport narrows. */
+@media (max-width: 1300px) {
+  .inner {
+    column-gap: 24px;
+  }
+
+  .navList {
+    gap: 24px;
+  }
+
+  .navList a {
+    font-size: 11.5px;
+  }
+
+  .ctaButton {
+    padding: 14px 22px;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cta {
+    display: none;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .header,
+  .header.scrolled {
+    height: 76px;
+  }
+
+  .header.scrolled {
+    background: rgba(11, 9, 6, 0.86);
+  }
+
+  /* While the full-screen menu is open, the logo/toggle row stays fixed in
+     place while the nav's own content scrolls beneath it on short
+     viewports — give the header a solid backdrop so scrolled text can
+     never show through or overlap the logo. */
+  .header.headerMenuOpen {
+    background: #201a13;
+  }
+
+  /* Force a simple, robust two-item row (logo / hamburger). The 3-column
+     desktop grid is not used here: with `.nav` taken out of flow via
+     `position: fixed`, CSS grid auto-placement can drop the hamburger into
+     the middle track instead of the far edge, so we flatten to flex. */
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 clamp(20px, 7vw, 40px);
+  }
+
+  .logoLink {
+    min-width: 0;
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Full-screen luxury overlay. Sized with dvh so mobile browser chrome
+     never causes a sliver of the page to peek out beneath, and faded/scaled
+     in rather than sliding as a side panel. `.nav` itself never scrolls —
+     only `.navScroll` below does — so the top clearance for the fixed
+     logo/toggle row can never be scrolled away from underneath them. */
+  .nav {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    background:
+      radial-gradient(ellipse 80% 60% at 22% 12%, rgba(201, 165, 106, 0.07) 0%, rgba(201, 165, 106, 0) 55%),
+      linear-gradient(180deg, #201a13 0%, var(--color-charcoal) 45%, #191410 100%);
+    flex-direction: column;
+    align-items: stretch;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.03);
+    transition:
+      opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0.55s;
+    display: flex;
+    z-index: 56;
+    overflow: hidden;
+  }
+
+  .navSpacer {
+    flex-shrink: 0;
+    height: clamp(84px, 15vh, 128px);
+  }
+
+  .navScroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 clamp(28px, 8vw, 44px) clamp(28px, 5vh, 44px);
+  }
+
+  .navOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition:
+      opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s;
+  }
+
+  .navList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(16px, 3.6vh, 30px);
+    white-space: normal;
+  }
+
+  .navList li {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .navOpen .navList li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navOpen .navList li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .navOpen .navList li:nth-child(2) {
+    transition-delay: 0.16s;
+  }
+  .navOpen .navList li:nth-child(3) {
+    transition-delay: 0.22s;
+  }
+  .navOpen .navList li:nth-child(4) {
+    transition-delay: 0.28s;
+  }
+  .navOpen .navList li:nth-child(5) {
+    transition-delay: 0.34s;
+  }
+  .navOpen .navList li:nth-child(6) {
+    transition-delay: 0.4s;
+  }
+  .navOpen .navList li:nth-child(7) {
+    transition-delay: 0.46s;
+  }
+
+  .navList a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 5.6vh, 30px);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    padding-bottom: 0;
+    color: var(--color-text-on-dark);
+    transition: color 0.35s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .navList a::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 1px;
+    margin-right: 0;
+    background: var(--color-gold);
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), margin-right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .navList a::after {
+    display: none;
+  }
+
+  .navList a:hover,
+  .navList a:active {
+    color: var(--color-gold-light);
+    transform: translateX(6px);
+  }
+
+  .navList a:hover::before,
+  .navList a:active::before {
+    width: 18px;
+    margin-right: 12px;
+  }
+
+  .mobileCta {
+    display: inline-flex;
+    align-self: stretch;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: clamp(24px, 6vh, 40px);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+  }
+
+  .navOpen .mobileCta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) and (prefers-reduced-motion: reduce) {
+  .nav,
+  .navList li,
+  .mobileCta {
+    transition: opacity 0.25s ease !important;
+    transform: none !important;
+  }
+}

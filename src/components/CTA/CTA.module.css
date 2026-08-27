@@ -1,0 +1,74 @@
+.cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* A floor, not a fixed height: the text column drives the row's actual
+     height (it always fits, by definition), and the image — positioned
+     absolutely so its square source crop can never inflate the row via its
+     own intrinsic aspect ratio — simply fills whatever height results. */
+  min-height: 560px;
+}
+
+.textCol {
+  background: var(--color-dark);
+  display: flex;
+  align-items: center;
+  padding: 56px var(--container-pad) 56px 64px;
+}
+
+.textInner {
+  max-width: 460px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.25;
+  color: var(--color-text-on-dark);
+  margin-bottom: 18px;
+}
+
+.paragraph {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--color-text-on-dark-soft);
+  margin-bottom: 24px;
+}
+
+.imageCol {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageCol img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .cta {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .textCol {
+    padding: 44px var(--container-pad);
+  }
+
+  .textInner {
+    max-width: 100%;
+  }
+
+  .imageCol {
+    position: static;
+    height: 280px;
+  }
+
+  .imageCol img {
+    position: static;
+    height: 100%;
+  }
+}

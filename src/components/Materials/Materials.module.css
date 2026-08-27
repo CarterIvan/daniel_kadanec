@@ -1,0 +1,128 @@
+.materials {
+  background: var(--color-bg-alt);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.paragraph {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-soft);
+  margin-bottom: 20px;
+}
+
+.link {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  transition: color var(--dur-base) var(--ease-premium);
+}
+
+.link:hover {
+  color: var(--color-gold-light);
+}
+
+.link span {
+  display: inline-block;
+  margin-left: 3px;
+  transition: transform var(--dur-micro) var(--ease-out);
+}
+
+.link:hover span {
+  transform: translateX(3px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  transition: border-color var(--dur-base) var(--ease-premium), transform var(--dur-base) var(--ease-premium),
+    box-shadow var(--dur-base) var(--ease-premium);
+}
+
+.card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(23, 20, 15, 0.07);
+}
+
+.card:hover .swatchImg {
+  transform: scale(1.04);
+}
+
+.thumb {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wordmark {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.swatchImg {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: transform var(--dur-slow) var(--ease-premium);
+}
+
+.desc {
+  font-size: 12.5px;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,290 @@
+.projects {
+  background: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 44px;
+  gap: 24px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--color-text);
+}
+
+.headerLink {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  white-space: nowrap;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.headerLink:hover {
+  color: var(--color-gold-light);
+}
+
+.headerLink span {
+  margin-left: 4px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.headerLink:hover span {
+  transform: translateX(3px);
+}
+
+/* Track: a real horizontally-scrolling, snap-aligned carousel — not a
+   static grid. Works identically in spirit at every breakpoint; only the
+   visible-item count (via slide flex-basis) changes. */
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  scroll-snap-align: start;
+  flex: 0 0 calc((100% - 4 * 20px) / 5);
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+}
+
+.card:hover img,
+.card:focus-visible img {
+  transform: scale(1.03);
+  filter: brightness(0.88);
+}
+
+/* Subtle "click to view larger" affordance — a small gold "+" that fades
+   in on hover, never a large text overlay. */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(23, 20, 15, 0.12);
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover .cardOverlay,
+.card:focus-visible .cardOverlay {
+  opacity: 1;
+}
+
+.cardPlus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 239, 231, 0.55);
+  color: var(--color-gold-light);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  transform: scale(0.85);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .cardPlus,
+.card:focus-visible .cardPlus {
+  transform: scale(1);
+}
+
+/* Caption (category + title) — hidden on desktop/tablet where the
+   portfolio reads as pure photography, shown below the image on mobile
+   where each slide needs to identify itself. */
+.cardCaption {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  padding: 0;
+  transition: background-color 0.35s ease, transform 0.35s ease;
+}
+
+.dotActive {
+  background: var(--color-gold);
+  transform: scale(1.35);
+}
+
+.counter {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--color-text-soft);
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow:hover {
+  border-color: var(--color-gold);
+  background: var(--color-bg-alt);
+}
+
+.arrowGlyph {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrowPrev:hover .arrowGlyph {
+  transform: translateX(-4px);
+}
+
+.arrowNext:hover .arrowGlyph {
+  transform: translateX(4px);
+}
+
+@media (max-width: 960px) {
+  .heading {
+    font-size: 32px;
+  }
+
+  .slide {
+    flex-basis: 42%;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .heading {
+    font-size: 27px;
+  }
+
+  .track {
+    gap: 14px;
+  }
+
+  .slide {
+    flex-basis: 90%;
+  }
+
+  .card {
+    aspect-ratio: 4 / 5;
+  }
+
+  .cardCaption {
+    display: block;
+    padding-top: 16px;
+    text-align: center;
+  }
+
+  .cardCategory {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 6px;
+  }
+
+  .cardTitle {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 21px;
+    color: var(--color-text);
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .counter {
+    display: inline-block;
+  }
+
+  .arrows {
+    gap: 16px;
+  }
+}

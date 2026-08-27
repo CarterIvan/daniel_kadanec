@@ -1,0 +1,23 @@
+/*
+  Premium editorial container used ONLY by the Header and Hero components.
+  Centered, disciplined width so the navbar and hero composition read as
+  intentional rather than edge-to-edge.
+*/
+.wide {
+  box-sizing: border-box;
+  width: calc(100% - 64px);
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .wide {
+    width: calc(100% - 56px);
+  }
+}
+
+@media (max-width: 768px) {
+  .wide {
+    width: calc(100% - 40px);
+  }
+}

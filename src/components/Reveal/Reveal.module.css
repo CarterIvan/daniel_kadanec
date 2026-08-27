@@ -1,0 +1,29 @@
+.reveal,
+.image {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-premium), transform var(--dur-slow) var(--ease-premium);
+}
+
+.reveal {
+  transform: translateY(28px);
+}
+
+.image {
+  transform: translateY(14px) scale(1.04);
+  transition-duration: var(--dur-base);
+}
+
+.reveal.visible,
+.image.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .image {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

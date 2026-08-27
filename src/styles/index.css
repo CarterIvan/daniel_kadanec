@@ -1,0 +1,208 @@
+:root {
+  --color-bg: #f7f4ef;
+  --color-bg-alt: #f2ede4;
+  --color-dark: #17140f;
+  --color-dark-2: #1c1812;
+  --color-charcoal: #211c16;
+  --color-text: #2a251e;
+  --color-text-soft: #635c52;
+  --color-text-on-dark: #f3efe7;
+  --color-text-on-dark-soft: #b7ada0;
+  --color-gold: #c6a06a;
+  --color-gold-light: #d8b98a;
+  --color-border: #e4ddd0;
+  --color-border-dark: #34302a;
+  --color-white: #ffffff;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container-width: 1280px;
+  --container-pad: 40px;
+
+  --header-height: 100px;
+
+  /* Shared animation language — every transition/animation on the site
+     should draw from these rather than inventing its own timing, so the
+     whole experience reads as one consistent, deliberate motion system. */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-micro: 250ms;
+  --dur-base: 450ms;
+  --dur-slow: 700ms;
+  --dur-cinematic: 1200ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: background-color var(--dur-base) var(--ease-premium), color var(--dur-base) var(--ease-premium),
+    border-color var(--dur-base) var(--ease-premium), transform var(--dur-base) var(--ease-premium),
+    box-shadow var(--dur-base) var(--ease-premium);
+}
+
+/* A button's own arrow, when it wraps its glyph in <span class="btnArrow">,
+   nudges a few pixels on hover — the one shared micro-interaction every
+   "→" in the site should use instead of each component reinventing it. */
+.btnArrow {
+  display: inline-block;
+  transition: transform var(--dur-micro) var(--ease-out);
+}
+
+.btn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(198, 160, 106, 0.25);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-on-dark);
+}
+
+.btn-outline-dark:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-outline-light {
+  background: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.btn-outline-light:hover {
+  background: var(--color-text);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.section {
+  padding: 120px 0;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 88px 0;
+  }
+  :root {
+    --container-pad: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 64px 0;
+  }
+  :root {
+    --container-pad: 20px;
+  }
+}
+
+/* Global safety net: whatever animation/transition any component adds,
+   anywhere on the site, is neutralised for users who have asked for less
+   motion — rather than relying on every component remembering its own
+   reduced-motion guard. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

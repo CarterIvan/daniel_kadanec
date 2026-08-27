@@ -1,0 +1,78 @@
+.intro {
+  background: var(--color-bg);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) auto minmax(0, 5fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.statement {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  color: var(--color-text);
+  max-width: 560px;
+}
+
+.divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--color-border);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 6px;
+}
+
+.copy p {
+  position: relative;
+  padding-left: 34px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-text-soft);
+  max-width: 420px;
+}
+
+.copyIndex {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-gold);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .statement {
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .copy p {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,65 @@
+.materials {
+  background: var(--color-bg-alt);
+}
+
+.header {
+  max-width: 560px;
+  margin-bottom: 56px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+/* Editorial rows, not a product-spec grid: large label, short description,
+   thin dividers doing the separating rather than cards/borders/shadows. */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 40px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.list .row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.label {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--color-gold);
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-soft);
+  max-width: 460px;
+}
+
+@media (max-width: 700px) {
+  .heading {
+    font-size: 27px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px 0;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,370 @@
+.hero {
+  position: relative;
+  height: 92vh;
+  min-height: 780px;
+  max-height: 920px;
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  /* Subtle cinematic color grade: slightly desaturated and warmed, deeper
+     shadows, softened highlights — closer to editorial architecture
+     photography than a straight camera JPEG. */
+  filter: saturate(0.87) contrast(1.08) brightness(0.96) sepia(0.06);
+  animation: heroImageSettle 3.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroImageSettle {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 5, 4, 0.96) 0%,
+      rgba(6, 5, 4, 0.86) 18%,
+      rgba(6, 5, 4, 0.5) 40%,
+      rgba(6, 5, 4, 0.16) 62%,
+      rgba(6, 5, 4, 0.02) 82%,
+      rgba(6, 5, 4, 0) 100%
+    ),
+    radial-gradient(ellipse 60% 90% at 0% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.textBlock {
+  width: 100%;
+  max-width: 500px;
+  padding-top: var(--header-height);
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 62px;
+  line-height: 1.02;
+  color: var(--color-text-on-dark);
+  margin-bottom: 18px;
+}
+
+.divider {
+  display: block;
+  width: 72px;
+  height: 1.5px;
+  background: var(--color-gold);
+  margin-bottom: 26px;
+}
+
+.subtext {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-on-dark-soft);
+  margin-bottom: 44px;
+  max-width: 450px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  max-width: 100%;
+}
+
+.btn {
+  padding: 18px 30px;
+  letter-spacing: 0.1em;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.actions a:hover .arrow {
+  transform: translateX(4px);
+}
+
+.scrollIndicator {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  opacity: 0.85;
+}
+
+.scrollArrow {
+  display: inline-block;
+  color: var(--color-gold);
+}
+
+/* Entrance choreography: everything starts invisible and reveals in a slow,
+   staggered sequence timed to begin right as the preloader clears (its
+   minimum visible time + exit transition is ~2.55s). */
+.reveal {
+  opacity: 0;
+}
+
+.revealEyebrow {
+  animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.5s forwards;
+}
+
+.revealHeadline {
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.65s forwards;
+}
+
+.revealDivider {
+  width: 0;
+  animation: heroLineGrow 0.6s cubic-bezier(0.22, 1, 0.36, 1) 2.95s forwards;
+}
+
+.revealSubtext {
+  animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 3.1s forwards;
+}
+
+.revealActions {
+  animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 3.3s forwards;
+}
+
+.revealScroll {
+  animation: heroFadeIn 0.8s ease 3.5s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroLineGrow {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageWrap img {
+    animation: none;
+  }
+
+  .reveal,
+  .revealEyebrow,
+  .revealHeadline,
+  .revealSubtext,
+  .revealActions,
+  .revealScroll {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .revealDivider {
+    animation: none;
+    opacity: 1;
+    width: 72px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .headline {
+    font-size: 54px;
+  }
+}
+
+/* Tablet / small laptop: keep the horizontal image + text composition,
+   just give the text column a fluid, proportional width. */
+@media (max-width: 1100px) {
+  .textBlock {
+    width: 44%;
+    max-width: 440px;
+  }
+
+  .headline {
+    font-size: 50px;
+  }
+
+  .subtext {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .textBlock {
+    width: 50%;
+    max-width: 420px;
+  }
+
+  .headline {
+    font-size: 44px;
+  }
+}
+
+/* Mobile: the image stays full-bleed behind the hero and the whole text
+   group — eyebrow, headline, paragraph, buttons — is treated as one
+   optically centered block sitting on top of it. */
+@media (max-width: 768px) {
+  .hero {
+    height: 92vh;
+    height: 92svh;
+    min-height: 600px;
+    max-height: 800px;
+  }
+
+  .imageWrap img {
+    object-position: 58% center;
+  }
+
+  /* Strong, almost-black editorial block over the left ~40% (where the
+     type sits), fading out through the middle, natural and warm by the
+     time it reaches the slat wall on the right — never black there. */
+  .overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(6, 5, 4, 0.96) 0%,
+        rgba(6, 5, 4, 0.9) 22%,
+        rgba(6, 5, 4, 0.74) 40%,
+        rgba(6, 5, 4, 0.4) 56%,
+        rgba(6, 5, 4, 0.14) 74%,
+        rgba(6, 5, 4, 0.03) 92%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(6, 5, 4, 0.4) 0%,
+        rgba(6, 5, 4, 0.06) 60%
+      ),
+      radial-gradient(ellipse 70% 60% at 15% 60%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+    padding-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .textBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(88vw, 520px);
+    padding-top: 0;
+    margin: 0 auto;
+  }
+
+  .headline {
+    font-size: clamp(38px, 9vw, 54px);
+    line-height: 1.05;
+    max-width: 100%;
+    overflow-wrap: normal;
+    margin-bottom: 14px;
+  }
+
+  .divider {
+    margin-bottom: 20px;
+  }
+
+  .subtext {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    width: min(88vw, 360px);
+    gap: 14px;
+    margin: 0 auto;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 16px 24px;
+    justify-content: center;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .content {
+    padding-bottom: clamp(32px, 7vh, 48px);
+  }
+
+  .headline {
+    margin-bottom: 16px;
+  }
+
+  .subtext {
+    margin-bottom: 24px;
+  }
+}

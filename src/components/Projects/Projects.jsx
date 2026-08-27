@@ -64,7 +64,7 @@ function Projects() {
             <span className="eyebrow">Realizácie</span>
             <h2 className={styles.heading}>Ukážky mojej práce</h2>
           </div>
-          <a href="#contact" className={styles.headerLink}>
+          <a href="https://www.instagram.com/danjo.kady/" className={styles.headerLink}>
             Všetky realizácie <span>→</span>
           </a>
         </div>

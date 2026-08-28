@@ -16,7 +16,7 @@ function CTA() {
             Napíšte mi pár informácií o vašom projekte
             <br />a pripravím vám nezáväznú ponuku.
           </p>
-          <a href="mailto:info@danielkadanec.sk" className="btn btn-primary">
+          <a href="mailto:kady.danjo@gmail.com" className="btn btn-primary">
             Nezáväzná ponuka
           </a>
         </div>

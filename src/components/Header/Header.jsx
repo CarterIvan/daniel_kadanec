@@ -61,14 +61,14 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className={`btn btn-primary ${styles.mobileCta}`} onClick={closeMenu}>
-              KONTAKT 
+            <a href="tel:0940700565" className={`btn btn-primary ${styles.mobileCta}`} onClick={closeMenu}>
+              KONTAKT
               <span className={styles.ctaArrow}>→</span>
             </a>
           </div>
         </nav>
 
-        <a href="#contact" className={`btn btn-primary ${styles.cta} ${styles.ctaButton}`}>
+        <a href="tel:0940700565" className={`btn btn-primary ${styles.cta} ${styles.ctaButton}`}>
           KONTAKT
           <span className={styles.ctaArrow}>→</span>
         </a>

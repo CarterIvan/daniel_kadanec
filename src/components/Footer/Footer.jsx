@@ -58,10 +58,10 @@ function Footer() {
           <h4 className={styles.colTitle}>Kontakt</h4>
           <ul className={styles.list}>
             <li>
-              <a href="tel:+421908123456">+421 908 123 456</a>
+              <a href="tel:+421908123456">+421 940 700 565</a>
             </li>
             <li>
-              <a href="mailto:info@danielkadanec.sk">info@danielkadanec.sk</a>
+              <a href="mailto:kady.danjo@gmail.com">kady.danjo@gmail.com</a>
             </li>
             <li>Bratislava a okolie</li>
           </ul>

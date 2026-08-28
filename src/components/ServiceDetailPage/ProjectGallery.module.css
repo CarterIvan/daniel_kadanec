@@ -197,8 +197,12 @@
     gap: 14px;
   }
 
+  /* One full-width, centered slide per view — no partial "peek" of the
+     next image. The gutter matches the page's own container padding, so
+     the slide shares the same left/right edges as the heading above it. */
   .slide {
-    flex-basis: 90%;
+    flex-basis: 100%;
+    scroll-snap-align: center;
   }
 
   .tile {
@@ -207,6 +211,7 @@
 
   .controls {
     flex-direction: column;
+    align-items: center;
     gap: 18px;
     margin-top: 28px;
   }

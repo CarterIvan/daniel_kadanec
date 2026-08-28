@@ -36,7 +36,7 @@ function Hero() {
 
       <div className={`${wide.wide} ${styles.content}`}>
         <div className={styles.textBlock}>
-          <span className={`eyebrow ${reveal(styles.revealEyebrow)}`}>Bratislava a okolie</span>
+          <span className={`eyebrow ${styles.heroEyebrow} ${reveal(styles.revealEyebrow)}`}>Bratislava a okolie</span>
           <h1 className={`${styles.headline} ${reveal(styles.revealHeadline)}`}>
             Nábytok
             <br />

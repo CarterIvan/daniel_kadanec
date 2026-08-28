@@ -31,15 +31,15 @@ function ServiceDetailPage({ service }) {
       </Reveal>
 
       <Reveal>
+        <ProjectGallery gallery={service.gallery} />
+      </Reveal>
+
+      <Reveal>
         <ProcessTimeline steps={processSteps} />
       </Reveal>
 
       <Reveal>
         <ServiceMaterials quality={service.quality} />
-      </Reveal>
-
-      <Reveal>
-        <ProjectGallery gallery={service.gallery} />
       </Reveal>
 
       <Reveal>

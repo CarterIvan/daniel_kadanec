@@ -24,6 +24,17 @@ import interiorStaircaseWinderSteps from '../assets/images/interior-staircase-wi
 import interiorTvWallUnitShelving from '../assets/images/interior-tv-wall-unit-shelving.jpeg'
 import interiorStaircaseBuiltInWardrobe from '../assets/images/interior-staircase-built-in-wardrobe.jpeg'
 import interiorMurphyBedFloatingShelf from '../assets/images/interior-murphy-bed-floating-shelf.jpeg'
+import kupelna1 from '../assets/images/kupelna1.jpeg'
+import kupelna2 from '../assets/images/kupelna2.jpeg'
+import kupelna3 from '../assets/images/kupelna3.jpeg'
+import kupelna4 from '../assets/images/kupelna4.jpeg'
+import kupelna5 from '../assets/images/kupelna5.jpeg'
+import skrina1 from '../assets/images/skrina1.jpeg'
+import skrina2 from '../assets/images/skrina2.jpeg'
+import skrina3 from '../assets/images/skrina3.jpeg'
+import skrina4 from '../assets/images/skrina4.jpeg'
+import skrina5 from '../assets/images/skrina5.jpeg'
+import skrina6 from '../assets/images/skrina6.jpeg'
 
 // Shared across every service page — the process itself doesn't change
 // depending on what's being built, only the content around it does.
@@ -102,6 +113,12 @@ export const serviceDetails = {
       { image: wardrobeMirror, alt: 'Vstavaná skriňa so zrkadlovými dverami' },
       { image: wardrobeOpen, alt: 'Otvorená vstavaná skriňa s vnútorným usporiadaním' },
       { image: hallwayWardrobe, alt: 'Predsieňová skriňa s lavicou' },
+      { image: skrina1, alt: 'Vstavaná skriňa na mieru' },
+      { image: skrina2, alt: 'Vstavaná skriňa na mieru' },
+      { image: skrina3, alt: 'Vstavaná skriňa na mieru' },
+      { image: skrina4, alt: 'Vstavaná skriňa na mieru' },
+      { image: skrina5, alt: 'Vstavaná skriňa na mieru' },
+      { image: skrina6, alt: 'Vstavaná skriňa na mieru' },
     ],
     features: [
       { number: '01', title: 'Zameranie priestoru', description: 'Presné zameranie aj náročných dispozícií a šikmín.' },
@@ -186,6 +203,11 @@ export const serviceDetails = {
     },
     gallery: [
       { image: bathroomVanity, alt: 'Kúpeľňová skrinka pod umývadlo s okrúhlym zrkadlom' },
+      { image: kupelna1, alt: 'Kúpeľňový nábytok na mieru' },
+      { image: kupelna2, alt: 'Kúpeľňový nábytok na mieru' },
+      { image: kupelna3, alt: 'Kúpeľňový nábytok na mieru' },
+      { image: kupelna4, alt: 'Kúpeľňový nábytok na mieru' },
+      { image: kupelna5, alt: 'Kúpeľňový nábytok na mieru' },
     ],
     features: [
       { number: '01', title: 'Návrh a zameranie', description: 'Návrh prispôsobený vlhkému prostrediu a dispozícii kúpeľne.' },

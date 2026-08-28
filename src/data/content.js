@@ -3,9 +3,12 @@ import kitchenWhiteSubway from '../assets/images/kitchen-white-subway.jpg'
 import wardrobeMirror from '../assets/images/wardrobe-mirror.jpeg'
 import kitchenDiningPendant from '../assets/images/kitchen-dining-pendant.jpeg'
 import bathroomVanity from '../assets/images/bathroom-vanity.jpeg'
-import kitchenBeigePantry from '../assets/images/kitchen-beige-pantry.jpeg'
 import kitchenGoldFaucet from '../assets/images/kitchen-gold-faucet.jpeg'
 import hallwayWardrobe from '../assets/images/hallway-wardrobe.jpeg'
+import decors from '../assets/images/decors.png'
+import kupelna1 from '../assets/images/kupelna1.jpeg'
+import interiorSideboardTvCabinet from '../assets/images/interior-sideboard-tv-cabinet.jpeg'
+import interiorTvWallUnitShelving from '../assets/images/interior-tv-wall-unit-shelving.jpeg'
 
 export { heroImg, kitchenDiningPendant }
 
@@ -71,12 +74,20 @@ export const aboutChecklist = [
   'Montáž v Bratislave a okolí',
 ]
 
+// Curated, mixed-category selection for the homepage — roughly 2 images
+// per service (Kuchyne, Vstavané skrine, Nábytok do interiéru, Kúpeľňový
+// nábytok), deliberately shuffled so the slider reads as one portfolio
+// rather than category-by-category. Each service's own detail page still
+// has its full, separate gallery in serviceDetails.js.
 export const projects = [
   { image: kitchenWhiteSubway, title: 'Kuchyňa na mieru', category: 'Kuchyne' },
+  { image: interiorTvWallUnitShelving, title: 'Obývacia stena s TV a policami', category: 'Nábytok do interiéru' },
   { image: wardrobeMirror, title: 'Vstavaná skriňa', category: 'Vstavané skrine' },
-  { image: bathroomVanity, title: 'Kúpeľňová skrinka', category: 'Kúpeľňový nábytok' },
-  { image: kitchenGoldFaucet, title: 'Kuchynská linka', category: 'Kuchyne' },
+  { image: kupelna1, title: 'Kúpeľňový nábytok na mieru', category: 'Kúpeľňový nábytok' },
   { image: hallwayWardrobe, title: 'Predsieňová skriňa', category: 'Vstavané skrine' },
+  { image: bathroomVanity, title: 'Kúpeľňová skrinka', category: 'Kúpeľňový nábytok' },
+  { image: interiorSideboardTvCabinet, title: 'Nízka komoda a TV skriňa', category: 'Nábytok do interiéru' },
+  { image: kitchenGoldFaucet, title: 'Kuchynská linka', category: 'Kuchyne' },
 ]
 
 export const materials = [
@@ -106,7 +117,7 @@ export const materials = [
     manufacturer: 'Ostatní výrobcovia',
     description: 'Široký výber dekorov a doplnkov.',
     materialCode: 'other',
-    image: kitchenBeigePantry,
+    image: decors,
   },
 ]
 

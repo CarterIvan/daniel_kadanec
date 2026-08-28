@@ -89,7 +89,7 @@ export const serviceDetails = {
       { label: 'Detail', description: 'Precízne spracovanie hrán, spojov a vnútorných prvkov.' },
     ],
     finalCta: {
-      heading: 'Máte predstavu o svojom priestore?',
+      heading: 'Máte predstavu o svojej novej kuchyni?',
       text: 'Porozprávajme sa o vašom projekte.',
     },
   },
@@ -134,7 +134,7 @@ export const serviceDetails = {
       { label: 'Detail', description: 'Presné spracovanie vnútorného usporiadania na mieru.' },
     ],
     finalCta: {
-      heading: 'Máte predstavu o svojom priestore?',
+      heading: 'Máte predstavu o svojej novej skrini?',
       text: 'Porozprávajme sa o vašom projekte.',
     },
   },
@@ -181,7 +181,7 @@ export const serviceDetails = {
       { label: 'Detail', description: 'Čisté línie a precízne spracovanie viditeľných hrán.' },
     ],
     finalCta: {
-      heading: 'Máte predstavu o svojom priestore?',
+      heading: 'Máte predstavu o svojom novom nábytku?',
       text: 'Porozprávajme sa o vašom projekte.',
     },
   },
@@ -223,7 +223,7 @@ export const serviceDetails = {
       { label: 'Detail', description: 'Precízne utesnené spoje a hrany.' },
     ],
     finalCta: {
-      heading: 'Máte predstavu o svojom priestore?',
+      heading: 'Máte predstavu o svojej novej kúpeľni?',
       text: 'Porozprávajme sa o vašom projekte.',
     },
   },

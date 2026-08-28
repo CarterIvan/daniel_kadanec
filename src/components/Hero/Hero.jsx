@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { heroImg } from '../../data/content'
 import { getIntroPlayed, setIntroPlayed } from '../../utils/introFlag'
 import wide from '../../styles/wide-container.module.css'
@@ -9,6 +9,7 @@ function Hero() {
   // initializers) — the flag itself is only ever flipped in the effect
   // below, which is idempotent even if that also double-invokes.
   const [skipIntro] = useState(() => getIntroPlayed())
+  const heroRef = useRef(null)
 
   useEffect(() => {
     setIntroPlayed()
@@ -16,8 +17,12 @@ function Hero() {
 
   const reveal = (revealClass) => (skipIntro ? '' : `${styles.reveal} ${revealClass}`)
 
+  const scrollToNextSection = () => {
+    heroRef.current?.nextElementSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
-    <section id="home" className={styles.hero}>
+    <section id="home" className={styles.hero} ref={heroRef}>
       <div className={styles.imageWrap}>
         <div className={styles.kenBurns}>
           <img
@@ -69,6 +74,26 @@ function Hero() {
         <span>Posúvajte nižšie</span>
         <span className={styles.scrollArrow}>↓</span>
       </div>
+
+      <button
+        type="button"
+        className={`${styles.mobileScrollIndicator} ${reveal(styles.revealScroll)}`}
+        onClick={scrollToNextSection}
+        aria-label="Posunúť na ďalšiu sekciu"
+      >
+        <span className={styles.mobileScrollLabel}>Posuňte nižšie</span>
+        <svg
+          className={styles.mobileScrollGlyph}
+          width="14"
+          height="26"
+          viewBox="0 0 14 26"
+          fill="none"
+          aria-hidden="true"
+        >
+          <line x1="7" y1="0" x2="7" y2="15" stroke="currentColor" strokeWidth="1" />
+          <path d="M2 11L7 17L12 11" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
     </section>
   )
 }

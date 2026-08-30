@@ -22,9 +22,6 @@ function Materials() {
               Používam laminované dosky od overených výrobcov, ktoré zaručujú
               dlhú životnosť, odolnosť a moderný vzhľad.
             </p>
-            <a href="#contact" className={styles.link}>
-              Zistiť viac o materiáloch <span>→</span>
-            </a>
           </div>
 
           <div className={styles.grid}>

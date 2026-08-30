@@ -22,30 +22,7 @@
   font-size: 14px;
   line-height: 1.7;
   color: var(--color-text-soft);
-  margin-bottom: 20px;
-}
-
-.link {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  transition: color var(--dur-base) var(--ease-premium);
-}
-
-.link:hover {
-  color: var(--color-gold-light);
-}
-
-.link span {
-  display: inline-block;
-  margin-left: 3px;
-  transition: transform var(--dur-micro) var(--ease-out);
-}
-
-.link:hover span {
-  transform: translateX(3px);
+  margin-bottom: 0;
 }
 
 .grid {

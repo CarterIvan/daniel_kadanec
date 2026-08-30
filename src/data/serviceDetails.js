@@ -192,13 +192,13 @@ export const serviceDetails = {
     title: 'Kúpeľňový nábytok',
     heroImage: bathroomVanity,
     heroDescription:
-      'Kúpeľňový nábytok na mieru z materiálov odolných voči vlhkosti — od skriniek pod umývadlo až po zrkadlové zostavy.',
+      'Kúpeľňový nábytok na mieru z kvalitných materiálov — od skriniek pod umývadlo až po zrkadlové zostavy.',
     intro: {
       statement: 'Kúpeľňa, kde má každý centimeter svoje miesto.',
       paragraphs: [
-        'Kúpeľňový nábytok navrhujem s dôrazom na odolnosť voči vlhkosti aj na to, aby úložný priestor slúžil presne tomu, čo v kúpeľni potrebujete mať poruke.',
-        'Skrinky pod umývadlo, zrkadlové zostavy aj vysoké skrine vyrábam z materiálov určených priamo do vlhkého prostredia.',
-        'Výsledkom je kúpeľňa, ktorá pôsobí čisto a usporiadane, bez zbytočných kompromisov.',
+        'Kúpeľňový nábytok navrhujem s dôrazom na praktickosť a čistý dizajn, aby úložný priestor prirodzene zapadol do celého interiéru.',
+        'Skrinky pod umývadlo, zrkadlové zostavy aj vysoké skrine vyrábam na mieru z kvalitných materiálov, podľa vašich predstáv a potrieb.',
+        'Výsledkom je kúpeľňa, ktorá pôsobí čisto a usporiadane a zároveň ponúka premyslený úložný priestor na mieru.',
       ],
     },
     gallery: [
@@ -210,17 +210,17 @@ export const serviceDetails = {
       { image: kupelna5, alt: 'Kúpeľňový nábytok na mieru' },
     ],
     features: [
-      { number: '01', title: 'Návrh a zameranie', description: 'Návrh prispôsobený vlhkému prostrediu a dispozícii kúpeľne.' },
-      { number: '02', title: 'Odolné materiály', description: 'Povrchy určené priamo do vlhkého prostredia.' },
+      { number: '01', title: 'Návrh a zameranie', description: 'Návrh prispôsobený dispozícii a rozmerom vašej kúpeľne.' },
+      { number: '02', title: 'Kvalitné materiály', description: 'Materiály vybrané s dôrazom na praktickosť a čistý vzhľad.' },
       { number: '03', title: 'Výroba na mieru', description: 'Skrinky, zrkadlové zostavy aj vysoké skrine na mieru.' },
       { number: '04', title: 'Precízne spracovanie', description: 'Dôraz na detail aj pri drobných kúpeľňových prvkoch.' },
       { number: '05', title: 'Montáž', description: 'Čistá montáž bez zásahu do existujúcich rozvodov.' },
       { number: '06', title: 'Individuálny prístup', description: 'Riešenie presne podľa veľkosti a tvaru vašej kúpeľne.' },
     ],
     quality: [
-      { label: 'Materiál', description: 'Dosky a povrchy odolné voči vlhkosti a vode.' },
-      { label: 'Kovanie', description: 'Nehrdzavejúce kovanie vhodné do kúpeľne.' },
-      { label: 'Detail', description: 'Precízne utesnené spoje a hrany.' },
+      { label: 'Materiál', description: 'Kvalitné dosky a povrchy s čistým, praktickým vzhľadom.' },
+      { label: 'Kovanie', description: 'Kvalitné kovanie a mechanizmy pre každodenné používanie.' },
+      { label: 'Detail', description: 'Precízne spracovanie spojov a hrán.' },
     ],
     finalCta: {
       heading: 'Máte predstavu o svojej novej kúpeľni?',

@@ -62,7 +62,7 @@ export const services = [
   {
     slug: 'kupelnovy-nabytok',
     title: 'Kúpeľňový nábytok',
-    description: 'Kúpeľňový nábytok na mieru z kvalitných materiálov odolných voči vlhkosti.',
+    description: 'Kúpeľňový nábytok na mieru z kvalitných materiálov, navrhnutý podľa vašich potrieb a priestoru.',
     image: bathroomVanity,
   },
 ]

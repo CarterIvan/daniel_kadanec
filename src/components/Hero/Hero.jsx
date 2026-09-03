@@ -28,6 +28,8 @@ function Hero() {
           <img
             src={heroImg}
             alt="Moderná kuchyňa na mieru s drevenou lamelovou priečkou"
+            fetchpriority="high"
+            decoding="async"
             className={skipIntro ? '' : styles.imgSettle}
           />
         </div>

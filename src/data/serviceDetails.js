@@ -10,7 +10,7 @@ import kitchenWhiteMinimalistOpenPlan from '../assets/images/kitchen-white-minim
 import kitchenOliveGreenBrassHandles from '../assets/images/kitchen-olive-green-brass-handles.jpeg'
 import kitchenBlueGreyShakerStyle from '../assets/images/kitchen-blue-grey-shaker-style.jpeg'
 import kitchenMintGreenCabinets from '../assets/images/kitchen-mint-green-cabinets.jpeg'
-import heroImg from '../assets/images/hero.png'
+import heroImg from '../assets/images/hero.jpg'
 import wardrobeMirror from '../assets/images/wardrobe-mirror.jpeg'
 import wardrobeOpen from '../assets/images/wardrobe-open.jpg'
 import hallwayWardrobe from '../assets/images/hallway-wardrobe.jpeg'

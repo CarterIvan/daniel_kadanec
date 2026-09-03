@@ -22,7 +22,7 @@ function CTA() {
         </div>
       </div>
       <div className={styles.imageCol}>
-        <img src={kitchenDiningPendant} alt="Prémiová kuchyňa s jedálenským stolom" />
+        <img src={kitchenDiningPendant} alt="Prémiová kuchyňa s jedálenským stolom" loading="lazy" decoding="async" />
       </div>
     </section>
   )

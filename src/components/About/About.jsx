@@ -6,7 +6,7 @@ function About() {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.imageCol}>
-        <img src={kitchenBeigePantry} alt="Kuchyňa na mieru s vstavanými spotrebičmi" />
+        <img src={kitchenBeigePantry} alt="Kuchyňa na mieru s vstavanými spotrebičmi" loading="lazy" decoding="async" />
       </div>
 
       <div className={styles.textCol}>

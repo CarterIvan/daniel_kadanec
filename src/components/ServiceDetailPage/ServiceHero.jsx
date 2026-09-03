@@ -6,7 +6,7 @@ function ServiceHero({ category, title, heroDescription, heroImage }) {
   return (
     <section className={styles.hero}>
       <div className={styles.imageWrap}>
-        <img src={heroImage} alt={title} />
+        <img src={heroImage} alt={title} fetchpriority="high" decoding="async" />
         <div className={styles.overlay} />
       </div>
 

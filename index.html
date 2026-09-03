@@ -5,12 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Kadanec — Nábytok na mieru</title>
+    <meta
+      name="description"
+      content="Stolárstvo Daniel Kadanec — kuchyne na mieru, vstavané skrine, nábytok do interiéru a kúpeľňový nábytok z kvalitných materiálov. Bratislava a okolie."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <!-- Loaded non-render-blocking (media=print swapped to all on load):
+         the initial paint uses the fallback font stack in index.css and
+         swaps in as soon as the stylesheet is ready — same font-display:
+         swap behavior as before, just off the critical rendering path. -->
+    <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <style>
       /* Paint dark immediately, before any JS/CSS bundle executes, so the
          very first frame already matches the preloader — no white flash. */

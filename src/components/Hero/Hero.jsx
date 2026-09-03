@@ -39,7 +39,12 @@ function Hero() {
       <div className={`${wide.wide} ${styles.content}`}>
         <div className={styles.textBlock}>
           <span className={`eyebrow ${styles.heroEyebrow} ${reveal(styles.revealEyebrow)}`}>Bratislava a okolie</span>
-          <h1 className={`${styles.headline} ${reveal(styles.revealHeadline)}`}>
+          {/* The headline is the page's actual LCP candidate (the hero
+              photo sits behind a dark overlay, so it doesn't qualify) —
+              rendered fully visible immediately rather than on the
+              staggered fade-in delay, so it can be painted and measured
+              right away instead of sitting at opacity:0 for ~2.6s+. */}
+          <h1 className={styles.headline}>
             Nábytok
             <br />
             na mieru,

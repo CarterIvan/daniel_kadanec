@@ -9,6 +9,12 @@
       name="description"
       content="Stolárstvo Daniel Kadanec — kuchyne na mieru, vstavané skrine, nábytok do interiéru a kúpeľňový nábytok z kvalitných materiálov. Bratislava a okolie."
     />
+    <!-- LCP image: a static, stable-URL preload the browser's preload
+         scanner can discover while parsing this HTML, before the JS
+         bundle (React, the router, the Hero component) has even started
+         downloading. Without this, the <img> doesn't exist in the DOM —
+         and its fetch can't start — until React mounts. -->
+    <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

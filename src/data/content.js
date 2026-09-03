@@ -1,4 +1,8 @@
-import heroImg from '../assets/images/hero.jpg'
+// Served from public/ (not imported as a bundled asset) so it has a
+// stable URL that index.html can <link rel="preload"> — the browser can
+// then start fetching it during initial HTML parsing, in parallel with
+// the JS bundle, instead of waiting for React to mount the <img> first.
+const heroImg = '/hero.jpg'
 import kitchenWhiteSubway from '../assets/images/kitchen-white-subway.jpg'
 import wardrobeMirror from '../assets/images/wardrobe-mirror.jpeg'
 import kitchenDiningPendant from '../assets/images/kitchen-dining-pendant.jpeg'
